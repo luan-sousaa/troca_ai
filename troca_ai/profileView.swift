@@ -9,88 +9,84 @@ import SwiftUI
 
 struct profileView: View {
     var body: some View {
-        NavigationStack{
+        NavigationStack {
             ZStack(alignment: .top) {
                 Rectangle()
-                    .fill(Color.lightBlue)
+                    .fill(Color.blue.opacity(0.6))
                     .frame(height: 150)
                     .edgesIgnoringSafeArea(.top)
+                Image("logo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 122)
+                    .position(x: 200, y: 40)
                 
-                VStack {
-                    Spacer().frame(height: 100)
-                    Image("logo")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 200)
-                        .padding()
-                        .position(x: 195, y: -30)
-                    Spacer()
-                    VStack(alignment: .leading, spacing: 8) {
-                        
-                        HStack{
-                            Image(systemName: "person.crop.circle")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(height: 50)
-                            Text("Sofia")
-                                .font(.headline)
-                        }
-                        
-                        Text("Ofereço: Olá, eu sou a Sofia e posso dar aulas de inglês.")
-                        Text("Procuro: Pintor")
-                        
-                        Text("Informações de Sofia:")
+                
+                VStack(alignment: .leading) {
+                    HStack {
+                        Image(systemName: "person.crop.circle")
+                            .resizable()
+                            .frame(width: 40, height: 40)
+                        Text("Nome do usuário")
+                        Image(systemName: "pencil")
                             .bold()
                         
-                        HStack {
-                            Image(systemName: "phone.fill")
-                            Text("(99) 99999-9999            ")
-                            
-                        }
-                        HStack {
-                            Image(systemName: "camera.fill")
-                            Text("@sofia_profile")
-                            
-                        }
+                        Spacer()
                     }
-                    .padding()
-                    .background(Color.lightBlue.opacity(0.4))
-                    .cornerRadius(12)
-                    .padding(.horizontal)
-                    .position(x: 187, y: -100)
-                    
+                    .padding(.top,140)
+                    .padding(.leading, 10)
                 }
                 VStack{
-                    Text("Avaliações:")
-                        .position(x: 65, y: 420)
-                        .bold()
-                    
-                    VStack(alignment: .leading) {
-                        HStack{
-                            Image(systemName: "person.circle")
-                            Text("Maria clara")
-                                .bold()
-                            
-                        }
-                        Text("Estava desesperada pois não conseguia dominar a língua inglesa, mas a Sofia me ensinou perfeitamente. Recomendo muito essa profissional!")
-                    }
-                    .padding()
-                    .background(Color.gray.opacity(0.2))
-                    .cornerRadius(10)
-                    .position(x:187, y:219)
-                    HStack {
-                        Image(systemName: "plus.rectangle.fill")
+                    Text("O que tenho a oferecer: ")
+                        .padding(.top, 60)
+                    Rectangle()
+                        .fill(Color.blue.opacity(0.3))
+                        .frame(width: 300, height: 200)
+                        .overlay(
+                            VStack {
+                                Text("Ofereco: Olá, eu sou o Arthur e posso passear com seu pet.")
+                                    .multilineTextAlignment(.center)
+                                    .padding(.top, 2)
+                                Image("pet")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width:150, height: 100)
+                                    .padding(.bottom, 10)
+                            }
+                        )
+                        .padding(.top, 10)
+                }
+                .padding(.top, 150)
+                
+                VStack(alignment: .leading) {
+                    HStack{
+                        Image(systemName: "questionmark.circle")
                             .resizable()
-                            .frame(width: 50, height: 40)
-                            .padding()
+                            .frame(width: 30, height: 30)
+                        Text("Ajuda e Suporte")
+                        Spacer()
                     }
+                    .padding(.top, 520)
+                    .padding(.leading, 40)
+                    
                 }
                 
+            }
+            NavigationLink(destination: ContentView()){
+                VStack(alignment: .leading) {
+                    HStack{
+                        Image(systemName: "plus.circle")
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                            .position(CGPoint(x: 10.0, y: 10.0))
+                        Spacer()
+                    }
+                    .padding(.leading, 290)
+                }
             }
         }
     }
 }
-
 #Preview {
     profileView()
 }

@@ -2,6 +2,7 @@ import SwiftUI
 
 struct chatView: View {
     @State private var searchText = ""
+    
     var body: some View {
         NavigationStack {
             ZStack(alignment: .top) {

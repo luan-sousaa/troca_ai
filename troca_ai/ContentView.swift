@@ -21,8 +21,6 @@ struct ContentView: View {
             profileView().tabItem {
                 Label("Perfil", systemImage: "person.crop.circle.fill")
             }
-            
-            
         }
     }
 }
