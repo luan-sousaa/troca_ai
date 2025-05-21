@@ -23,9 +23,9 @@ struct InfoView: View {
                         Image("logo")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 200)
+                            .frame(width: 160)
                             .padding()
-                            .position(x: 195, y: -30)
+                            .position(x: 175, y: -50)
                         Spacer()
              VStack(alignment: .leading, spacing: 8) {
                  
@@ -39,10 +39,10 @@ struct InfoView: View {
                       .font(.headline)
                  }
                             
-                            Text("Ofereço:\(pAnuncio.ofereco!)")
-                            Text("Procuro:\(pAnuncio.busco!)")
+                            Text("Ofereço: \(pAnuncio.ofereco!)")
+                            Text("Procuro: \(pAnuncio.busco!)")
                                        
-                            Text("Informações de \(pAnuncio.name!):")
+                            Text("Informações de \(pAnuncio.name!): ")
                              .bold()
                                        
                HStack {
@@ -60,30 +60,31 @@ struct InfoView: View {
                             .background(Color.babyBlue)
                             .cornerRadius(12)
                             .padding(.horizontal)
-                            .position(x: 187, y: -100)
+                            .position(x: 175, y: -85)
                                    
                     }
             VStack{
                 Text("Avaliações:")
-                    .position(x: 65, y: 447)
+                    .position(x: 65, y: 380)
                     .bold()
-                
-                ForEach(pAnuncio.avaliacoes,id: \.self){anuncio in
-                    VStack(alignment: .leading) {
-                        HStack{
-                            Image(systemName: "person.circle")
-                            VStack {
-                                Text(anuncio.nome!)
-                                    .bold()
-                                Text(anuncio.avaliacao!)
+                ScrollView{
+                    ForEach(pAnuncio.avaliacoes,id: \.self){anuncio in
+                        VStack(alignment: .leading) {
+                            HStack{
+                                Image(systemName: "person.circle")
+                                VStack {
+                                    Text(anuncio.nome!)
+                                        .bold()
+                                    Text(anuncio.avaliacao!)
+                                }
+                                
                             }
-                            
                         }
+                        .padding()
+                        .background(Color.gray.opacity(0.2))
+                        .cornerRadius(10)
+                        .position(x:187, y:219)
                     }
-                    .padding()
-                    .background(Color.gray.opacity(0.2))
-                    .cornerRadius(10)
-                    .position(x:187, y:219)
                 }
             }
             

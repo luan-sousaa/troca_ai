@@ -12,7 +12,7 @@ struct profileView: View {
         NavigationStack {
             ZStack(alignment: .top) {
                 Rectangle()
-                    .fill(Color.blue.opacity(0.6))
+                    .fill(Color.lightBlue.opacity(0.9))
                     .frame(height: 150)
                     .edgesIgnoringSafeArea(.top)
                 Image("logo")
@@ -47,7 +47,7 @@ struct profileView: View {
                                 Text("Ofereco: Olá, eu sou o Arthur e posso passear com seu pet.")
                                     .multilineTextAlignment(.center)
                                     .padding(.top, 2)
-                                Image("pet")
+                                Image("dog")
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width:150, height: 100)
@@ -72,7 +72,7 @@ struct profileView: View {
                 }
                 
             }
-            NavigationLink(destination: ContentView()){
+            NavigationLink(destination: CriarAnuncioView()){
                 VStack(alignment: .leading) {
                     HStack{
                         Image(systemName: "plus.circle")

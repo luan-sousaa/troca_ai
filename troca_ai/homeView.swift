@@ -48,7 +48,7 @@ struct homeView: View {
                         .padding()
                     Spacer()
                 }
-                LazyVGrid(columns: colunas, spacing: 20) {
+                LazyVGrid(columns: colunas, spacing: 10) {
                     ForEach(viewModel.categories, id: \.self){ categorie in
                         VStack{
                             HStack{
@@ -88,16 +88,39 @@ struct homeView: View {
                         ForEach(viewModel.anuncios
                             .filter({ $0.minhaCategoria == categoriaAux.Categoria}), id: \.self){anuncio in
                                 NavigationLink(destination: InfoView(pAnuncio: anuncio)){
+                                    ZStack{
+                                        Rectangle()
+                                            .fill(.babyBlue)
+                                            .clipShape(RoundedRectangle(cornerRadius: 10))
+                                            .frame(height: 80)
+                                        HStack{
+                                            Image(systemName: "person.circle.fill")
+                                                .font(.system(size: 45))
+                                                .padding(.leading)
+                                            VStack(alignment: .leading){
+                                                Text(anuncio.name!)
+                                                    .font(.system(size: 18))
+                                                    .bold()
+                                                Text("Ofereco: \(anuncio.ofereco!)")
+                                                    .font(.system(size: 15))
+                                            }
+                                        }
+                                        Spacer()
+                                    }
+                                }
+                            }
+                    }else{
+                        ForEach(viewModel.anuncios.prefix(3), id: \.self){anuncio in
+                            NavigationLink(destination: InfoView(pAnuncio: anuncio)){
                                 ZStack{
                                     Rectangle()
                                         .fill(.babyBlue)
                                         .clipShape(RoundedRectangle(cornerRadius: 10))
                                         .frame(height: 80)
-                                    HStack{
+                                    HStack(alignment: .top){
                                         Image(systemName: "person.circle.fill")
                                             .font(.system(size: 45))
                                             .padding(.leading)
-                                        Spacer()
                                         VStack(alignment: .leading){
                                             Text(anuncio.name!)
                                                 .font(.system(size: 18))
@@ -105,45 +128,19 @@ struct homeView: View {
                                             Text("Ofereco: \(anuncio.ofereco!)")
                                                 .font(.system(size: 15))
                                         }
-                                        }
                                         Spacer()
                                     }
                                 }
-                                
-                            }
-                    }else{
-                        ForEach(viewModel.anuncios.prefix(3), id: \.self){anuncio in
-                            NavigationLink(destination: InfoView(pAnuncio: anuncio)){
-                            ZStack{
-                                Rectangle()
-                                    .fill(.babyBlue)
-                                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                                    .frame(height: 80)
-                                HStack{
-                                    Image(systemName: "person.circle.fill")
-                                        .font(.system(size: 45))
-                                        .padding(.leading)
-                                    Spacer()
-                                    VStack(alignment: .leading){
-                                        Text(anuncio.name!)
-                                            .font(.system(size: 18))
-                                            .bold()
-                                        Text("Ofereco: \(anuncio.ofereco!)")
-                                            .font(.system(size: 15))
-                                    }
-                                    Spacer()
-                                }
-                                }
+                                .padding(.horizontal)
                             }
                         }
                     }
-                    
                 }
                 
                 Spacer()
+                .padding()
             }
         }
-        .padding()
         .onAppear(){
             viewModel.fetch()
             viewModel.fetchAnuncios()
@@ -153,14 +150,3 @@ struct homeView: View {
 #Preview {
     ContentView()
 }
-
-
-
-
-
-
-    
-        
-
-
-
