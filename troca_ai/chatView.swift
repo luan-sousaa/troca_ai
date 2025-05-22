@@ -33,21 +33,23 @@ struct chatView: View {
                     
                     ScrollView {
                         ForEach(0..<10, id: \.self) { item in
-                            HStack {
-                                Image(systemName: "person.crop.circle")
-                                    .resizable()
-                                    .frame(width: 40, height: 40)
-                                Text("Nome_usuario")
+                            NavigationLink(destination: ConversaView()){
+                                HStack {
+                                    Image(systemName: "person.crop.circle")
+                                        .resizable()
+                                        .frame(width: 40, height: 40)
+                                    Text("Nome_usuario")
+                                    Spacer()
+                                    Image(systemName: "info.circle")
+                                    Image(systemName: "chevron.right")
+                                }
+                                .padding()
+                                .background(Color.white.opacity(0.8))
+                                .cornerRadius(10)
+                                .padding(.horizontal)
+                                
                                 Spacer()
-                                Image(systemName: "info.circle")
-                                Image(systemName: "chevron.right")
                             }
-                            .padding()
-                            .background(Color.white.opacity(0.8))
-                            .cornerRadius(10)
-                            .padding(.horizontal)
-                            
-                            Spacer()
                         }
                     }
                     
@@ -57,8 +59,7 @@ struct chatView: View {
             }
             
         }
-        
-        
+        .tint(.black)
     }
     
 }

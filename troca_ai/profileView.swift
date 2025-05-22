@@ -22,6 +22,7 @@ struct profileView: View {
                     .position(x: 200, y: 40)
                 
                 
+                
                 VStack(alignment: .leading) {
                     HStack {
                         Image(systemName: "person.crop.circle")
@@ -52,6 +53,7 @@ struct profileView: View {
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width:150, height: 100)
+                                    .cornerRadius(10)
                                     .padding(.bottom, 10)
                             }
                         )

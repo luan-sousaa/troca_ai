@@ -81,7 +81,7 @@ struct InfoView: View {
                                 Rectangle()
                                     .fill(.gray.opacity(0.3))
                                     .clipShape(RoundedRectangle(cornerRadius: 10))
-                                    .frame(height: 80)
+                                    .frame(height: 85)
                                 VStack(alignment: .leading) {
                                     HStack{
                                         Image(systemName: "person.circle")
