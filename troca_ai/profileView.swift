@@ -42,6 +42,7 @@ struct profileView: View {
                     Rectangle()
                         .fill(Color.blue.opacity(0.3))
                         .frame(width: 300, height: 200)
+                        .cornerRadius(10)
                         .overlay(
                             VStack {
                                 Text("Ofereco: Olá, eu sou o Arthur e posso passear com seu pet.")

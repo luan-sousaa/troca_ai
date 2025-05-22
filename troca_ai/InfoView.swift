@@ -13,85 +13,108 @@ struct InfoView: View {
     var body: some View
     {
         ZStack(alignment: .top) {
-                    Rectangle()
+            Rectangle()
                 .fill(Color.lightBlue)
-                        .frame(height: 150)
-                        .edgesIgnoringSafeArea(.top)
-                    
-              VStack {
-                        Spacer().frame(height: 100)
-                        Image("logo")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 160)
-                            .padding()
-                            .position(x: 175, y: -50)
-                        Spacer()
-             VStack(alignment: .leading, spacing: 8) {
-                 
-                 HStack{
-                     Image(systemName: "person.crop.circle")
-                         .resizable()
-                         .scaledToFit()
-                         .frame(height: 50)
-                     //foreach
-                     Text(pAnuncio.name!)
-                      .font(.headline)
-                 }
-                            
-                            Text("Ofereço: \(pAnuncio.ofereco!)")
-                            Text("Procuro: \(pAnuncio.busco!)")
-                                       
-                            Text("Informações de \(pAnuncio.name!): ")
-                             .bold()
-                                       
-               HStack {
+                .frame(height: 150)
+                .edgesIgnoringSafeArea(.top)
+            VStack{
+                VStack {
+                    Spacer().frame(height: 100)
+                    Image("logo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(height: 122)
+                        .padding()
+                        .position(x: 187, y: -85)
+                    Spacer()
+                    VStack(alignment: .leading, spacing: 8) {
+                        
+                        HStack{
+                            Image(systemName: "person.crop.circle")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height: 50)
+                            //foreach
+                            Text(pAnuncio.name!)
+                                .font(.headline)
+                        }
+                       // HStack{
+                            VStack(alignment: .leading){
+                                Text("**Ofereço:** \(pAnuncio.ofereco!)")
+                                Text("**Procuro:**\(pAnuncio.busco!)")
+                                Text("**Procuro:** \(pAnuncio.descricao!)")
+                            }
+                            .font(.system(size: 15))
+                            //                        .lineLimit(nil)
+                            .fixedSize(horizontal: false, vertical: true)
+                           // Spacer()
+                      //  }
+                        Text("Informações de \(pAnuncio.name!): ")
+                            .bold()
+                        
+                        HStack {
                             Image(systemName: "phone.fill")
                             Text("(99) 99999-9999            ")
-                  
-                                       }
-               HStack {
-                       Image(systemName: "camera.fill")
-                       Text("@_profile")
-                       
-                                       }
-                                   }
-                            .padding()
-                            .background(Color.babyBlue)
-                            .cornerRadius(12)
-                            .padding(.horizontal)
-                            .position(x: 175, y: -85)
-                                   
-                    }
-            VStack{
-                Text("Avaliações:")
-                    .position(x: 65, y: 380)
-                    .bold()
-                ScrollView{
-                    ForEach(pAnuncio.avaliacoes,id: \.self){anuncio in
-                        VStack(alignment: .leading) {
-                            HStack{
-                                Image(systemName: "person.circle")
-                                VStack {
-                                    Text(anuncio.nome!)
-                                        .bold()
-                                    Text(anuncio.avaliacao!)
-                                }
-                                
-                            }
+                            
                         }
+                        HStack {
+                            Image(systemName: "camera.fill")
+                            Text("@_profile")
+                            
+                        }
+                    }
+                    .padding()
+                    .background(Color.babyBlue)
+                    .cornerRadius(12)
+                    .padding(.horizontal)
+                   // .position(x: 187, y: -95)
+                    
+                }
+                VStack(alignment:.leading){
+                    Text("Avaliações:")
+                    // .position(x: 65, y: 380)
+                        .bold()
                         .padding()
-                        .background(Color.gray.opacity(0.2))
-                        .cornerRadius(10)
-                        .position(x:187, y:219)
+                    ScrollView{
+                        ForEach(pAnuncio.avaliacoes,id: \.self){anuncio in
+                            ZStack{
+                                Rectangle()
+                                    .fill(.gray.opacity(0.3))
+                                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                                    .frame(height: 80)
+                                VStack(alignment: .leading) {
+                                    HStack{
+                                        Image(systemName: "person.circle")
+                                            .font(.system(size: 45))
+                                        VStack(alignment:.leading) {
+                                            Text(anuncio.nome!)
+                                                .bold()
+                                            Text(anuncio.avaliacao!)
+                                        }
+                                        Spacer()
+                                    }
+                                 
+                                }
+                                .padding()
+                                //                            .background(Color.gray.opacity(0.2))
+                                .cornerRadius(10)
+                                // .position(x:187, y:219)
+                            }
+                            .padding(.horizontal)
+                        }
                     }
                 }
-            }
             
-                }
+                
             }
+        }
+    }
         }
    
 #Preview {
     ContentView()
 }
+//Rectangle()
+//    .fill(.babyBlue)
+//    .clipShape(RoundedRectangle(cornerRadius: 10))
+//    .frame(height: 80)

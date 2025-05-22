@@ -97,16 +97,24 @@ struct homeView: View {
                                             Image(systemName: "person.circle.fill")
                                                 .font(.system(size: 45))
                                                 .padding(.leading)
+                                                .foregroundStyle(.black)
+                                     
                                             VStack(alignment: .leading){
                                                 Text(anuncio.name!)
                                                     .font(.system(size: 18))
+                                                    .foregroundStyle(.black)
                                                     .bold()
-                                                Text("Ofereco: \(anuncio.ofereco!)")
-                                                    .font(.system(size: 15))
-                                            }
+                                                    Text("Ofereco: \(anuncio.ofereco!)")
+                                                        .font(.system(size: 15))
+                                                        .foregroundStyle(.black)
+                                                        .multilineTextAlignment(.leading)
+                                                   
+                                                }
+                                          
+                                            Spacer()
                                         }
-                                        Spacer()
                                     }
+                                    .padding(.horizontal)
                                 }
                             }
                     }else{
@@ -121,12 +129,17 @@ struct homeView: View {
                                         Image(systemName: "person.circle.fill")
                                             .font(.system(size: 45))
                                             .padding(.leading)
+                                            .foregroundStyle(.black)
                                         VStack(alignment: .leading){
                                             Text(anuncio.name!)
                                                 .font(.system(size: 18))
                                                 .bold()
+                                                .foregroundStyle(.black)
                                             Text("Ofereco: \(anuncio.ofereco!)")
                                                 .font(.system(size: 15))
+                                                .foregroundStyle(.black)
+                                                .multilineTextAlignment(.leading)
+                                            
                                         }
                                         Spacer()
                                     }
@@ -136,11 +149,9 @@ struct homeView: View {
                         }
                     }
                 }
-                
-                Spacer()
-                .padding()
             }
         }
+        .tint(.black)
         .onAppear(){
             viewModel.fetch()
             viewModel.fetchAnuncios()
