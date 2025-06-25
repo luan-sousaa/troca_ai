@@ -30,6 +30,7 @@ O **Troca Aí** conecta usuários com necessidades específicas a outros que pos
 
 ## 🗂️ Estrutura de Pastas (projeto Xcode)
 
+```bash
 troca_ai/
 ├── troca_ai/
 │   ├── AnuncioView.swift       # Tela de anúncios
@@ -39,7 +40,7 @@ troca_ai/
 │   ├── ConversaView.swift      # Tela de conversa
 │   ├── homeView.swift          # Tela principal (feed ou início)
 │   ├── InfoView.swift          # Tela com informações do app
-│   ├── Model                   # Modelos de dados (usuário, troca, etc.)
+│   ├── Model                   # Model
 │   ├── profileView.swift       # Tela de perfil do usuário
 │   ├── troca_aiApp.swift       # Ponto de entrada do app (App struct)
 │   └── ViewModel/              # Lógica de negócio e estado das views
@@ -48,9 +49,8 @@ troca_ai/
 ├── troca_aiUITests/           # Testes de interface do usuário
 │   ├── troca_aiUITests.swift
 │   └── troca_aiUITaunchTests.swift
-
+```
 ---
-
 ## 🧪 Como Rodar o Projeto Localmente
 
 1. Clone o repositório:
