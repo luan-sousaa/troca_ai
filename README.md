@@ -69,3 +69,18 @@ open troca_ai.xcodeproj
 4. Para testar APIs, recomendamos executar os fluxos no **Node-RED** e utilizar o **Postman** para chamadas HTTP.
 
 ---
+## 💡 Inspiração
+A ideia do Troca Aí surgiu da observação do potencial das comunidades em se apoiarem mutuamente.
+Muitas pessoas têm habilidades úteis e outras têm necessidades reais, e o aplicativo atua como uma ponte para conectar essas duas realidades — sem a mediação do dinheiro.
+---
+## 👨‍💻 Equipe de Desenvolvimento
+**Luan Bispo**
+
+**Eduarda**
+
+**Ana Beatriz**
+
+**Ana** 
+
+
+
