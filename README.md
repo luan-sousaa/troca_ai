@@ -29,7 +29,24 @@ O **Troca Aí** conecta usuários com necessidades específicas a outros que pos
 ---
 
 ## 🗂️ Estrutura de Pastas (projeto Xcode)
-
+troca_ai/
+├── troca_ai/
+│   ├── AnuncioView.swift       # Tela de anúncios
+│   ├── Assets/                 # Recursos visuais do app (imagens, cores etc.)
+│   ├── chatView.swift          # Tela de chat entre usuários
+│   ├── ContentView.swift       # Tela inicial do app
+│   ├── ConversaView.swift      # Tela de conversa
+│   ├── homeView.swift          # Tela principal (feed ou início)
+│   ├── InfoView.swift          # Tela com informações do app
+│   ├── Model                   # Modelos de dados (usuário, troca, etc.)
+│   ├── profileView.swift       # Tela de perfil do usuário
+│   ├── troca_aiApp.swift       # Ponto de entrada do app (App struct)
+│   └── ViewModel/              # Lógica de negócio e estado das views
+├── troca_aiTests/              # Testes de unidade
+│   └── troca_aiTests.swift
+├── troca_aiUITests/           # Testes de interface do usuário
+│   ├── troca_aiUITests.swift
+│   └── troca_aiUITaunchTests.swift
 
 ---
 
@@ -40,3 +57,15 @@ O **Troca Aí** conecta usuários com necessidades específicas a outros que pos
 ```bash
 git clone https://github.com/luan-sousaa/troca_ai.git
 cd troca_ai
+
+2. Abra o projeto no Xcode:
+
+```bash
+open troca_ai.xcodeproj
+```
+
+3. Selecione um simulador ou dispositivo real e clique em **Run** ▶️.
+
+4. Para testar APIs, recomendamos executar os fluxos no **Node-RED** e utilizar o **Postman** para chamadas HTTP.
+
+---
