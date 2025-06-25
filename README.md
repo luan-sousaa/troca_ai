@@ -29,6 +29,7 @@ O **Troca Aí** conecta usuários com necessidades específicas a outros que pos
 ---
 
 ## 🗂️ Estrutura de Pastas (projeto Xcode)
+
 troca_ai/
 ├── troca_ai/
 │   ├── AnuncioView.swift       # Tela de anúncios
