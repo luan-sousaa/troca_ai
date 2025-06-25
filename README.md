@@ -30,3 +30,13 @@ O **Troca Aí** conecta usuários com necessidades específicas a outros que pos
 
 ## 🗂️ Estrutura de Pastas (projeto Xcode)
 
+
+---
+
+## 🧪 Como Rodar o Projeto Localmente
+
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/luan-sousaa/troca_ai.git
+cd troca_ai
